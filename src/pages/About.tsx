@@ -10,7 +10,7 @@ const About = () => {
       <PageHeader
         eyebrow="Über uns"
         title="Wir reanimieren Räder — und schaffen Räume für Menschen."
-        description="Seit Anfang 2019 betreiben wir an drei Standorten in Wien Selbsthilfewerkstätten, in denen Fahrräder mit liebevoller Kleinarbeit repariert und revitalisiert werden."
+        description="Seit Anfang 2019 betreiben wir an zwei Standorten in Wien Selbsthilfewerkstätten, in denen Fahrräder mit liebevoller Kleinarbeit repariert und revitalisiert werden."
       />
 
       <section className="container-wide py-16 sm:py-20">
@@ -18,8 +18,8 @@ const About = () => {
           <div className="prose prose-neutral max-w-none">
             <p className="text-lg leading-relaxed text-foreground/90">
               Während einer unserer Standorte, die <strong>Absteige</strong>, aus Platzgründen
-              wirklich „nur" eine Selbsthilfewerkstatt ist, sind die zwei weiteren Werkstätten
-              in spannende Projekte eingebunden und bieten mehr Platz.
+              wirklich „nur" eine Selbsthilfewerkstatt ist, ist unser zweiter Standort, die
+              <strong> RadWG</strong>, in spannende Projekte eingebunden und bietet mehr Platz.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Daher können wir uns dort, zusätzlich zu einem offenen Werkstatttag pro Woche,
