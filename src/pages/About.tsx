@@ -10,7 +10,7 @@ const About = () => {
       <PageHeader
         eyebrow="Über uns"
         title="Wir reanimieren Räder — und schaffen Räume für Menschen."
-        description="Seit Anfang 2019 betreiben wir an drei Standorten in Wien Selbsthilfewerkstätten, in denen Fahrräder mit liebevoller Kleinarbeit repariert und revitalisiert werden."
+        description="Seit Anfang 2019 betreiben wir an zwei Standorten in Wien Selbsthilfewerkstätten, in denen Fahrräder mit liebevoller Kleinarbeit repariert und revitalisiert werden."
       />
 
       <section className="container-wide py-16 sm:py-20">
