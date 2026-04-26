@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/SectionHeading";
 
