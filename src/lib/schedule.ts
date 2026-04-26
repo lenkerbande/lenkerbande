@@ -33,6 +33,7 @@ export const SCHEDULE: RecurringEvent[] = [
     endTime: "21:00",
     location: "RadWG Offene Radwerkstatt",
     address: "Schmalzhofgasse 8, 1060 Wien, Österreich",
+    url: "/radwg-1060",
     description: "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung.",
   },
   {
