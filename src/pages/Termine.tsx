@@ -23,7 +23,11 @@ const Termine = () => {
               <ul className="mt-3 space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-primary" />
-                  Mittwoch · 17 – 21 Uhr
+                  Montag · 17 – 21 Uhr · RadWG 1060
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="h-2 w-2 rounded-full bg-primary" />
+                  Mittwoch · 17 – 21 Uhr · Absteige 1020
                 </li>
               </ul>
               <p className="mt-4 text-xs text-muted-foreground">
