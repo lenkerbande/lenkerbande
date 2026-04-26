@@ -18,8 +18,8 @@ const About = () => {
           <div className="prose prose-neutral max-w-none">
             <p className="text-lg leading-relaxed text-foreground/90">
               Während einer unserer Standorte, die <strong>Absteige</strong>, aus Platzgründen
-              wirklich „nur" eine Selbsthilfewerkstatt ist, sind die zwei weiteren Werkstätten
-              in spannende Projekte eingebunden und bieten mehr Platz.
+              wirklich „nur" eine Selbsthilfewerkstatt ist, ist unser zweiter Standort, die
+              <strong> RadWG</strong>, in spannende Projekte eingebunden und bietet mehr Platz.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
               Daher können wir uns dort, zusätzlich zu einem offenen Werkstatttag pro Woche,
