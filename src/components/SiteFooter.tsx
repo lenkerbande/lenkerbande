@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Bike } from "lucide-react";
+import { Mail, Bike } from "lucide-react";
 
 export const SiteFooter = () => {
   return (
@@ -34,11 +34,6 @@ export const SiteFooter = () => {
             <li>
               <a href="mailto:hallo@lenkerbande.at" className="inline-flex items-center gap-2 hover:text-primary-glow transition-base">
                 <Mail className="h-4 w-4" /> hallo@lenkerbande.at
-              </a>
-            </li>
-            <li>
-              <a href="tel:+436776350211" className="inline-flex items-center gap-2 hover:text-primary-glow transition-base">
-                <Phone className="h-4 w-4" /> +43 677 6350 2115
               </a>
             </li>
           </ul>
