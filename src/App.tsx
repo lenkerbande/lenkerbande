@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import About from "./pages/About.tsx";
 import Absteige from "./pages/Absteige.tsx";
+import RadWG from "./pages/RadWG.tsx";
 import Termine from "./pages/Termine.tsx";
 import Support from "./pages/Support.tsx";
 import Kontakt from "./pages/Kontakt.tsx";
