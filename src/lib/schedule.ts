@@ -27,6 +27,15 @@ export interface TerminOccurrence extends RecurringEvent {
  */
 export const SCHEDULE: RecurringEvent[] = [
   {
+    title: "RadWG 1060 — offene Radwerkstatt",
+    weekday: 1, // Montag
+    startTime: "17:00",
+    endTime: "21:00",
+    location: "RadWG Offene Radwerkstatt",
+    address: "Schmalzhofgasse 8, 1060 Wien, Österreich",
+    description: "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung.",
+  },
+  {
     title: "Absteige 1020 — offene Selbsthilfewerkstatt",
     weekday: 3, // Mittwoch
     startTime: "17:00",
