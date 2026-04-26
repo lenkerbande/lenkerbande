@@ -32,8 +32,8 @@ const angebot = [
 ];
 
 const stats = [
-  { value: "3", label: "Standorte in Wien" },
-  { value: "2019", label: "seit dem aktiv" },
+  { value: "2", label: "Standorte in Wien" },
+  { value: "2019", label: "Gründung" },
   { value: "100%", label: "ehrenamtlich" },
 ];
 
