@@ -46,7 +46,6 @@ const Kontakt = () => {
             <p><strong>Lenkerbande</strong> — Verein zur Förderung niederschwelliger Mobilität</p>
             <p>Ybbsstraße 26, 1020 Wien, Österreich</p>
             <p>E-Mail: <a className="text-primary hover:text-primary-glow transition-base" href="mailto:hallo@lenkerbande.at">hallo@lenkerbande.at</a></p>
-            <p>Telefon: <a className="text-primary hover:text-primary-glow transition-base" href="tel:+436776350211">+43 677 6350 2115</a></p>
           </div>
         </div>
       </section>
