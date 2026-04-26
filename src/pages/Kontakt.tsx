@@ -12,7 +12,7 @@ const Kontakt = () => {
       />
 
       <section className="container-wide py-12 sm:py-16">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6">
           <a
             href="mailto:hallo@lenkerbande.at"
             className="hover-lift group rounded-2xl border border-border bg-card p-8"
@@ -23,19 +23,6 @@ const Kontakt = () => {
             <h3 className="mt-5 font-display text-xl font-semibold">E-Mail</h3>
             <p className="mt-2 text-base text-primary group-hover:text-primary-glow transition-base">
               hallo@lenkerbande.at
-            </p>
-          </a>
-
-          <a
-            href="tel:+436776350211"
-            className="hover-lift group rounded-2xl border border-border bg-card p-8"
-          >
-            <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-primary-foreground shadow-warm">
-              <Phone className="h-6 w-6" />
-            </span>
-            <h3 className="mt-5 font-display text-xl font-semibold">Telefon</h3>
-            <p className="mt-2 text-base text-primary group-hover:text-primary-glow transition-base">
-              +43 677 6350 2115
             </p>
           </a>
         </div>
