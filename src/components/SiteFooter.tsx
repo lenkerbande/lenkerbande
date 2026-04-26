@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Bike } from "lucide-react";
+import { Mail, Bike } from "lucide-react";
 
 export const SiteFooter = () => {
   return (
