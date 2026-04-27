@@ -46,7 +46,7 @@ const About = () => {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               { t: "Niederschwellig", d: "Zugang zu Mobilität, Werkzeug und Wissen — ohne Hürden, gegen Spende." },
-              { t: "Solidarisch", d: "Wir bieten Personen mit Fluchthintergrund sinnvolle Tagesstruktur und Weiterbildung." },
+              { t: "Vernetzend", d: "Menschen aus dem Grätzl kommen zusammen, lernen voneinander und teilen Wissen — ohne finanzielle Hürden." },
               { t: "Ressourcenschonend", d: "Räder reparieren statt wegwerfen. Jedes gerettete Rad ist ein Beitrag zur Stadt." },
             ].map((v) => (
               <div key={v.t} className="rounded-2xl border border-border bg-card p-7">

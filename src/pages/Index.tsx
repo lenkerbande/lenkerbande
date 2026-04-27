@@ -164,9 +164,9 @@ const Index = () => {
             <article className="rounded-2xl border border-border bg-card p-7">
               <h3 className="font-display text-xl font-semibold">Ehrenamtliches Engagement</h3>
               <p className="mt-3 text-sm text-muted-foreground">
-                Wir sehen das Fahrrad als sehr gutes Mittel, um handwerkliche Fähigkeiten zu vermitteln.
-                Bei unseren Aktivitäten wollen wir Personen mit Fluchthintergrund eine sinnvolle
-                Tagesstruktur bieten und ihre Kenntnisse weiter ausbauen.
+                Wir möchten Menschen im Grätzl vernetzen, zusammenbringen und Wissen
+                rund ums Fahrrad vermitteln — ohne finanzielle Hürden. Alle Tätigkeiten
+                finden ehrenamtlich statt, wir freuen uns über Spenden.
               </p>
             </article>
             <article className="rounded-2xl border border-border bg-card p-7">
