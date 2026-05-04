@@ -1,4 +1,4 @@
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/SectionHeading";
 import communityImage from "@/assets/community.jpg";
@@ -21,12 +21,11 @@ const About = () => {
         <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
           <div className="prose prose-neutral max-w-none">
             <p className="text-lg leading-relaxed text-foreground/90">
-              <Trans
-                i18nKey="about.p1"
-                components={{ a: <strong />, b: <strong /> }}
-              >
-                {t("about.p1_pre")}<strong>{t("about.p1_a")}</strong>{t("about.p1_mid")}<strong>{t("about.p1_b")}</strong>{t("about.p1_post")}
-              </Trans>
+              {t("about.p1_pre")}
+              <strong>{t("about.p1_a")}</strong>
+              {t("about.p1_mid")}
+              <strong>{t("about.p1_b")}</strong>
+              {t("about.p1_post")}
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">{t("about.p2")}</p>
           </div>
