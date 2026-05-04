@@ -30,7 +30,9 @@ export const SiteHeader = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  useEffect(() => { setOpen(false); }, [location.pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [location.pathname]);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -41,12 +43,16 @@ export const SiteHeader = () => {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-base",
-        scrolled ? "bg-background/85 backdrop-blur-md shadow-soft" : "bg-transparent"
+        "sticky top-0 z-50 w-full bg-background transition-base",
+        scrolled && "shadow-soft",
       )}
     >
       <div className="container-wide flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group" aria-label="Lenkerbande">
+        <Link
+          to="/"
+          className="flex items-center gap-2 group"
+          aria-label="Lenkerbande"
+        >
           <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-warm text-primary-foreground shadow-warm transition-base group-hover:scale-105">
             <Bike className="h-5 w-5" strokeWidth={2.4} />
           </span>
@@ -58,14 +64,16 @@ export const SiteHeader = () => {
         <nav className="hidden items-center gap-1 md:flex">
           {nav.map((item) => {
             if ("children" in item) {
-              const isActive = item.children.some((c) => location.pathname === c.to);
+              const isActive = item.children.some(
+                (c) => location.pathname === c.to,
+              );
               return (
                 <div key={item.labelKey} className="group relative">
                   <button
                     type="button"
                     className={cn(
                       "inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-base hover:text-foreground hover:bg-secondary",
-                      isActive && "text-foreground bg-secondary"
+                      isActive && "text-foreground bg-secondary",
                     )}
                   >
                     {t(item.labelKey)}
@@ -80,7 +88,7 @@ export const SiteHeader = () => {
                           className={({ isActive }) =>
                             cn(
                               "block rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-base hover:bg-secondary hover:text-foreground",
-                              isActive && "bg-secondary text-foreground"
+                              isActive && "bg-secondary text-foreground",
                             )
                           }
                         >
@@ -100,7 +108,7 @@ export const SiteHeader = () => {
                 className={({ isActive }) =>
                   cn(
                     "rounded-full px-4 py-2 text-sm font-medium text-muted-foreground transition-base hover:text-foreground hover:bg-secondary",
-                    isActive && "text-foreground bg-secondary"
+                    isActive && "text-foreground bg-secondary",
                   )
                 }
               >
@@ -141,7 +149,7 @@ export const SiteHeader = () => {
                         className={({ isActive }) =>
                           cn(
                             "block rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-base hover:text-foreground hover:bg-secondary",
-                            isActive && "text-foreground bg-secondary"
+                            isActive && "text-foreground bg-secondary",
                           )
                         }
                       >
@@ -159,7 +167,7 @@ export const SiteHeader = () => {
                   className={({ isActive }) =>
                     cn(
                       "rounded-lg px-4 py-3 text-base font-medium text-muted-foreground transition-base hover:text-foreground hover:bg-secondary",
-                      isActive && "text-foreground bg-secondary"
+                      isActive && "text-foreground bg-secondary",
                     )
                   }
                 >
