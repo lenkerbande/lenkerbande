@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Mail, Bike } from "lucide-react";
 
 export const SiteFooter = () => {
+  const { t } = useTranslation();
   return (
     <footer className="mt-24 bg-ink text-ink-foreground">
       <div className="container-wide grid gap-12 py-16 md:grid-cols-4">
@@ -12,24 +14,21 @@ export const SiteFooter = () => {
             </span>
             <span className="font-display text-xl font-semibold">Lenkerbande</span>
           </Link>
-          <p className="mt-4 max-w-md text-sm text-ink-foreground/70">
-            Räder für alle. Wir betreiben Selbsthilfewerkstätten in Wien und ermöglichen
-            niederschwelligen Zugang zur schönsten Form der Mobilität.
-          </p>
+          <p className="mt-4 max-w-md text-sm text-ink-foreground/70">{t("footer.tagline")}</p>
         </div>
 
         <div>
-          <h3 className="font-display text-base font-semibold">Navigation</h3>
+          <h3 className="font-display text-base font-semibold">{t("footer.navigation")}</h3>
           <ul className="mt-4 space-y-2 text-sm text-ink-foreground/70">
-            <li><Link to="/about" className="hover:text-primary-glow transition-base">Über uns</Link></li>
-            <li><Link to="/absteige-1020" className="hover:text-primary-glow transition-base">Werkstätten</Link></li>
-            <li><Link to="/termine" className="hover:text-primary-glow transition-base">Termine</Link></li>
-            <li><Link to="/support" className="hover:text-primary-glow transition-base">Unterstützen</Link></li>
+            <li><Link to="/about" className="hover:text-primary-glow transition-base">{t("nav.about")}</Link></li>
+            <li><Link to="/absteige-1020" className="hover:text-primary-glow transition-base">{t("nav.workshops")}</Link></li>
+            <li><Link to="/termine" className="hover:text-primary-glow transition-base">{t("nav.dates")}</Link></li>
+            <li><Link to="/support" className="hover:text-primary-glow transition-base">{t("nav.support")}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="font-display text-base font-semibold">Kontakt</h3>
+          <h3 className="font-display text-base font-semibold">{t("footer.contact")}</h3>
           <ul className="mt-4 space-y-3 text-sm text-ink-foreground/70">
             <li>
               <a href="mailto:hallo@lenkerbande.at" className="inline-flex items-center gap-2 hover:text-primary-glow transition-base">
@@ -42,8 +41,8 @@ export const SiteFooter = () => {
 
       <div className="border-t border-ink-foreground/10">
         <div className="container-wide flex flex-col items-start justify-between gap-2 py-6 text-xs text-ink-foreground/50 md:flex-row md:items-center">
-          <p>© {new Date().getFullYear()} Lenkerbande — Verein zur Förderung niederschwelliger Mobilität.</p>
-          <Link to="/kontakt" className="hover:text-primary-glow transition-base">Impressum</Link>
+          <p>© {new Date().getFullYear()} Lenkerbande — {t("footer.rights")}</p>
+          <Link to="/kontakt" className="hover:text-primary-glow transition-base">{t("footer.imprint")}</Link>
         </div>
       </div>
     </footer>

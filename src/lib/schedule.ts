@@ -1,50 +1,52 @@
 // Auto-generates upcoming Termine from a recurring weekly schedule.
 // Edit the SCHEDULE array below to add/change recurring events.
+// Titles, locations and descriptions are translation keys resolved at render time.
+
+import i18n from "@/i18n";
 
 export type Weekday = 0 | 1 | 2 | 3 | 4 | 5 | 6; // 0 = Sun ... 6 = Sat
 
 export interface RecurringEvent {
-  title: string;
+  /** i18n key for the title */
+  titleKey: string;
   weekday: Weekday;
   startTime: string; // "HH:MM"
   endTime: string;   // "HH:MM"
-  location: string;
+  /** i18n key for the location label */
+  locationKey: string;
   address: string;
   url?: string;
-  description?: string;
-  startsOn?: string;       // ISO date — first valid occurrence (inclusive)
-  endsOn?: string;         // ISO date — last valid occurrence (inclusive)
-  excludeDates?: string[]; // ISO dates to skip (holidays, breaks)
+  /** i18n key for the description */
+  descriptionKey?: string;
+  startsOn?: string;
+  endsOn?: string;
+  excludeDates?: string[];
 }
 
 export interface TerminOccurrence extends RecurringEvent {
   date: Date;
 }
 
-/**
- * Wiederkehrender Veranstaltungsplan.
- * Hier können neue Termine ergänzt oder Pausen über `excludeDates` eingetragen werden.
- */
 export const SCHEDULE: RecurringEvent[] = [
   {
-    title: "RadWG 1060 — offene Radwerkstatt",
-    weekday: 1, // Montag
+    titleKey: "schedule.radwgTitle",
+    weekday: 1,
     startTime: "17:00",
     endTime: "21:00",
-    location: "RadWG Offene Radwerkstatt",
+    locationKey: "schedule.radwgLocation",
     address: "Schmalzhofgasse 8, 1060 Wien, Österreich",
     url: "/radwg-1060",
-    description: "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung.",
+    descriptionKey: "schedule.description",
   },
   {
-    title: "Absteige 1020 — offene Selbsthilfewerkstatt",
-    weekday: 3, // Mittwoch
+    titleKey: "schedule.absteigeTitle",
+    weekday: 3,
     startTime: "17:00",
     endTime: "21:00",
-    location: "Absteige Offene Radwerkstatt",
+    locationKey: "schedule.absteigeLocation",
     address: "Ybbsstraße 26, 1020 Wien, Österreich",
     url: "/absteige-1020",
-    description: "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung.",
+    descriptionKey: "schedule.description",
   },
 ];
 
@@ -65,10 +67,6 @@ function withTime(d: Date, time: string): Date {
   return out;
 }
 
-/**
- * Returns the next `count` upcoming occurrences across all recurring events,
- * sorted ascending by start time.
- */
 export function getUpcomingTermine(count = 8, now: Date = new Date()): TerminOccurrence[] {
   const today = new Date(now);
   today.setHours(0, 0, 0, 0);
@@ -81,26 +79,20 @@ export function getUpcomingTermine(count = 8, now: Date = new Date()): TerminOcc
     const endBound = evt.endsOn ? new Date(evt.endsOn) : null;
     const exclude = new Set(evt.excludeDates ?? []);
 
-    // Generate up to `count` future dates per event (we'll merge & trim later)
     let added = 0;
     while (added < count) {
       const occurrenceStart = withTime(cursor, evt.startTime);
-
       const beforeStart = startBound && cursor < startBound;
       const afterEnd = endBound && cursor > endBound;
       const excluded = exclude.has(isoDay(cursor));
-      const inFuture = occurrenceStart >= now ||
-        // Include today if it hasn't ended yet
-        withTime(cursor, evt.endTime) > now;
+      const inFuture = occurrenceStart >= now || withTime(cursor, evt.endTime) > now;
 
       if (!beforeStart && !afterEnd && !excluded && inFuture) {
         occurrences.push({ ...evt, date: occurrenceStart });
         added++;
       }
-      // Move to next week
       cursor = new Date(cursor);
       cursor.setDate(cursor.getDate() + 7);
-
       if (afterEnd) break;
     }
   }
@@ -109,18 +101,17 @@ export function getUpcomingTermine(count = 8, now: Date = new Date()): TerminOcc
   return occurrences.slice(0, count);
 }
 
-const WEEKDAYS_DE = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-const MONTHS_DE = ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"];
-
 export function formatTerminDate(d: Date) {
+  const weekdays = i18n.t("schedule.weekdays", { returnObjects: true }) as string[];
+  const months = i18n.t("schedule.months", { returnObjects: true }) as string[];
   return {
-    weekday: WEEKDAYS_DE[d.getDay()],
+    weekday: weekdays[d.getDay()],
     day: pad(d.getDate()),
-    month: MONTHS_DE[d.getMonth()],
+    month: months[d.getMonth()],
     year: d.getFullYear(),
   };
 }
 
 export function formatTimeRange(start: string, end: string) {
-  return `${start} – ${end} Uhr`;
+  return i18n.t("schedule.timeRange", { start, end });
 }

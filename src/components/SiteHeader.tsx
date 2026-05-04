@@ -1,28 +1,31 @@
 import { Link, NavLink as RouterNavLink, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Menu, X, Bike, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 type NavItem =
-  | { to: string; label: string }
-  | { label: string; children: { to: string; label: string }[] };
+  | { to: string; labelKey: string }
+  | { labelKey: string; children: { to: string; labelKey: string }[] };
 
 const nav: NavItem[] = [
-  { to: "/", label: "Start" },
-  { to: "/about", label: "Über uns" },
+  { to: "/", labelKey: "nav.start" },
+  { to: "/about", labelKey: "nav.about" },
   {
-    label: "Werkstätten",
+    labelKey: "nav.workshops",
     children: [
-      { to: "/absteige-1020", label: "Die Absteige · 1020" },
-      { to: "/radwg-1060", label: "Die RadWG · 1060" },
+      { to: "/absteige-1020", labelKey: "nav.absteige" },
+      { to: "/radwg-1060", labelKey: "nav.radwg" },
     ],
   },
-  { to: "/termine", label: "Termine" },
-  { to: "/support", label: "Unterstützen" },
-  { to: "/kontakt", label: "Kontakt" },
+  { to: "/termine", labelKey: "nav.dates" },
+  { to: "/support", labelKey: "nav.support" },
+  { to: "/kontakt", labelKey: "nav.contact" },
 ];
 
 export const SiteHeader = () => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
@@ -43,7 +46,7 @@ export const SiteHeader = () => {
       )}
     >
       <div className="container-wide flex h-20 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group" aria-label="Lenkerbande Startseite">
+        <Link to="/" className="flex items-center gap-2 group" aria-label="Lenkerbande">
           <span className="grid h-10 w-10 place-items-center rounded-full bg-gradient-warm text-primary-foreground shadow-warm transition-base group-hover:scale-105">
             <Bike className="h-5 w-5" strokeWidth={2.4} />
           </span>
@@ -57,7 +60,7 @@ export const SiteHeader = () => {
             if ("children" in item) {
               const isActive = item.children.some((c) => location.pathname === c.to);
               return (
-                <div key={item.label} className="group relative">
+                <div key={item.labelKey} className="group relative">
                   <button
                     type="button"
                     className={cn(
@@ -65,7 +68,7 @@ export const SiteHeader = () => {
                       isActive && "text-foreground bg-secondary"
                     )}
                   >
-                    {item.label}
+                    {t(item.labelKey)}
                     <ChevronDown className="h-3.5 w-3.5 transition-transform group-hover:rotate-180" />
                   </button>
                   <div className="invisible absolute left-0 top-full z-50 min-w-[14rem] pt-2 opacity-0 transition-base group-hover:visible group-hover:opacity-100">
@@ -81,7 +84,7 @@ export const SiteHeader = () => {
                             )
                           }
                         >
-                          {c.label}
+                          {t(c.labelKey)}
                         </RouterNavLink>
                       ))}
                     </div>
@@ -101,20 +104,24 @@ export const SiteHeader = () => {
                   )
                 }
               >
-                {item.label}
+                {t(item.labelKey)}
               </RouterNavLink>
             );
           })}
+          <LanguageSwitcher className="ml-2" />
         </nav>
 
-        <button
-          className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card md:hidden"
-          onClick={() => setOpen((o) => !o)}
-          aria-label="Menü öffnen"
-          aria-expanded={open}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher compact />
+          <button
+            className="grid h-10 w-10 place-items-center rounded-full border border-border bg-card"
+            onClick={() => setOpen((o) => !o)}
+            aria-label={t("nav.openMenu")}
+            aria-expanded={open}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
       {open && (
@@ -123,9 +130,9 @@ export const SiteHeader = () => {
             {nav.map((item) => {
               if ("children" in item) {
                 return (
-                  <div key={item.label} className="py-2">
+                  <div key={item.labelKey} className="py-2">
                     <p className="px-4 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                      {item.label}
+                      {t(item.labelKey)}
                     </p>
                     {item.children.map((c) => (
                       <RouterNavLink
@@ -138,7 +145,7 @@ export const SiteHeader = () => {
                           )
                         }
                       >
-                        {c.label}
+                        {t(c.labelKey)}
                       </RouterNavLink>
                     ))}
                   </div>
@@ -156,7 +163,7 @@ export const SiteHeader = () => {
                     )
                   }
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </RouterNavLink>
               );
             })}
