@@ -1,0 +1,216 @@
+import type { Translations } from "./de";
+
+const en: Translations = {
+  common: {
+    readMore: "More info",
+    allDates: "View all dates",
+    noDates: "No dates scheduled right now. Check back soon!",
+    language: "Language",
+    contact: "Contact",
+  },
+  nav: {
+    start: "Home",
+    about: "About",
+    workshops: "Workshops",
+    absteige: "Die Absteige · 1020",
+    radwg: "Die RadWG · 1060",
+    dates: "Dates",
+    support: "Support us",
+    contact: "Contact",
+    openMenu: "Open menu",
+  },
+  footer: {
+    tagline:
+      "Bikes for everyone. We run self-help workshops in Vienna, providing low-barrier access to the most beautiful form of mobility.",
+    navigation: "Navigation",
+    contact: "Contact",
+    rights: "Association for the promotion of low-barrier mobility.",
+    imprint: "Imprint",
+  },
+  schedule: {
+    weekdays: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    timeRange: "{{start}} – {{end}}",
+    radwgTitle: "RadWG 1060 — open bike workshop",
+    absteigeTitle: "Absteige 1020 — open self-help workshop",
+    radwgLocation: "RadWG open bike workshop",
+    absteigeLocation: "Absteige open bike workshop",
+    description:
+      "Drop by and repair your bike using our tools, spare parts and friendly help.",
+  },
+  home: {
+    badge: "Bikes for everyone.",
+    titleA: "Making the most beautiful form of",
+    titleB: "mobility",
+    titleC: "accessible to all.",
+    intro:
+      "Since 2019 Lenkerbande has been running bike self-help workshops in Vienna. Repair, donate, get involved — together, low-barrier, all-volunteer.",
+    ctaWorkshops: "Discover our workshops",
+    ctaDates: "Upcoming dates",
+    stats: {
+      locations: "Locations in Vienna",
+      founded: "Founded",
+      volunteer: "volunteer-run",
+    },
+    offerEyebrow: "What we offer",
+    offerTitle: "What we do",
+    offerDescription:
+      "Three simple ways to get in touch with Lenkerbande — whether you're looking for, in need of, or willing to give help.",
+    offers: {
+      bike: {
+        title: "You need a bike?",
+        body: "We're working hard on solutions to give as many people as possible low-barrier access to the most beautiful form of mobility.",
+        cta: "Get in touch",
+      },
+      repair: {
+        title: "Your bike needs help?",
+        body: "Drop by one of our self-help workshops. Tools, spare parts and dedicated helpers are waiting for you.",
+        cta: "Workshops",
+      },
+      help: {
+        title: "Want to support us?",
+        body: "Identify with what we do? We're grateful for every helping hand. Write to us at hallo@lenkerbande.at.",
+        cta: "Get involved",
+      },
+    },
+    datesEyebrow: "Dates",
+    datesTitle: "Drop by.",
+    datesDescription:
+      "Our open workshop hours are generated automatically from the weekly schedule. You're always welcome to come by spontaneously.",
+    weekRhythm: "Weekly rhythm",
+    rhythmAbsteige: "Wednesday · 5 – 9 pm · Absteige 1020",
+    rhythmRadwg: "Monday · 5 – 9 pm · RadWG 1060",
+    fullCalendar: "View full calendar",
+    moreEyebrow: "And besides?",
+    moreTitle: "More than just a workshop.",
+    cards: {
+      volunteer: {
+        title: "Volunteer engagement",
+        body: "We want to connect people in our neighbourhood, bring them together and share knowledge about bikes — without financial barriers. All activities are run by volunteers, and we welcome donations.",
+      },
+      mobile: {
+        title: "Mobile bike checks",
+        body: "Book our team for a mobile bike check at your event!",
+      },
+      program: {
+        title: "Side programme",
+        body: "Bike repair courses, group rides and exciting activities beyond bikes — barbecues, communal gardening and more.",
+      },
+    },
+    ctaTitleA: "Become part of the",
+    ctaTitleB: "Lenkerbande",
+    ctaText:
+      "Donate your old bike, gift us your time or simply join us for a wrenching evening. We're looking forward to meeting you.",
+    ctaSupport: "Support us",
+  },
+  about: {
+    eyebrow: "About us",
+    title: "We bring bikes back to life — and create spaces for people.",
+    description:
+      "Since early 2019 we have been running self-help workshops at two locations in Vienna, where bikes are lovingly repaired and revitalised.",
+    p1_pre: "While one of our locations, the ",
+    p1_a: "Absteige",
+    p1_mid: ", is really only a self-help workshop due to limited space, our second location, the ",
+    p1_b: "RadWG",
+    p1_post: ", is involved in exciting projects and offers more room.",
+    p2: "That's why, in addition to one open workshop day per week, we also refurbish and distribute donated bikes there. Bikes that would otherwise be perceived as scrap can be made roadworthy again and given to people who otherwise couldn't afford their own bike.",
+    valuesTitle: "Our values",
+    values: {
+      access: { t: "Low-barrier", d: "Access to mobility, tools and knowledge — without hurdles, by donation." },
+      connect: { t: "Connecting", d: "People from the neighbourhood come together, learn from each other and share knowledge — without financial barriers." },
+      sustain: { t: "Resource-friendly", d: "Repair bikes instead of throwing them away. Every saved bike is a contribution to the city." },
+    },
+  },
+  absteige: {
+    eyebrow: "Workshop · 1020 Vienna",
+    title: "Die Absteige",
+    description: "A well-equipped bike and electrical self-help workshop in the heart of the 2nd district.",
+    where: "Where?",
+    whereV: "Basement, Ybbsstraße 26\n1020 Vienna",
+    when: "When?",
+    whenV: "Every Wednesday\n5 – 9 pm",
+    what: "What?",
+    whatV: "Self-help workshop with\ntools & spare parts",
+    helpTitle: "Help to help yourself",
+    helpP1:
+      "A well-equipped bike and electrical self-help workshop with lots of spare parts and motivated helpers who'll support you in getting your bike or broken device back in shape.",
+    helpP2_pre: "Used spare parts, tools and assistance are available ",
+    helpP2_strong: "by donation",
+    helpP2_post: ". New wear parts and, with a bit of luck, the right new components are also available at a fair price.",
+    helpP3:
+      "So if you have a broken bike you'd like to fix yourself but aren't quite sure how, or you're missing special tools — come and visit us!",
+    donationsTitle: "Bike donations",
+    donationsP1:
+      "During opening hours we gladly accept your broken or unused bikes as donations and ensure they're put to good use.",
+    donationsHint_strong: "Note:",
+    donationsHint_post: " Due to limited space, no donated bikes are handed out at this location.",
+    gardenTitle: "Wrench garden & wood stove",
+    gardenP:
+      "When it's cold, our wonderful wood stove keeps us warm. And when it's warm, we turn the parking spaces in front of the workshop into our neighbourhood oasis \"Schraubgarten\".",
+    upcoming: "Upcoming workshop dates",
+  },
+  radwg: {
+    eyebrow: "Workshop · 1060 Vienna",
+    title: "Die RadWG",
+    description: "Self-help workshop and bike parking spaces in the 6th district.",
+    where: "Where?",
+    whereV: "Schmalzhofgasse 8\n1060 Vienna",
+    when: "When?",
+    whenV: "Every Monday\n5 – 9 pm",
+    what: "What?",
+    whatV: "Self-help workshop &\nbike parking spaces",
+    openTitle: "Open workshop",
+    openP: "Drop by and repair your bike with tools, spare parts and assistance — every Monday from 5 to 9 pm.",
+    parkingTitle: "Bike parking",
+    parkingP: "Next to the workshop we also offer secure parking spaces for bikes on site.",
+    contactTitle: "Questions or interest?",
+    contactP: "Just send us a message — we look forward to hearing from you!",
+    upcoming: "Upcoming workshop dates",
+  },
+  termine: {
+    eyebrow: "Calendar",
+    title: "Upcoming dates",
+    description: "Our open workshop hours — generated automatically from the weekly schedule. You're always welcome to drop by.",
+    rhythmTitle: "Weekly rhythm",
+    rhythmNote: "Dates are generated automatically from the saved weekly schedule. Please ask about breaks or special dates by email.",
+    mobileTitle: "Mobile bike checks?",
+    mobileP: "Book our team for your event:",
+  },
+  support: {
+    eyebrow: "Support us",
+    title: "How you can help.",
+    description: "Bikes, time, premises — every form of support helps us forward.",
+    items: {
+      donate: {
+        title: "Donate a bike",
+        body: "You have an old or unused bike and want to put it to good use? We'll get your bike back in shape and give it to someone who needs it.",
+      },
+      pickup: {
+        title: "Pickups, basement clearing",
+        body: "Larger donations with multiple bikes are also very welcome. We take care of clearing your basement or bike room and putting the bikes to good use. Arrange a date by email.",
+      },
+      time: {
+        title: "Donate time",
+        body: "Interested in people and bikes and want to give us a hand? We're grateful for every helping hand!",
+      },
+    },
+    boxTitle: "Just write to us.",
+    boxP: "Whether donation, pickup or volunteering: a short email is enough.",
+  },
+  kontakt: {
+    eyebrow: "Contact",
+    title: "Say hello.",
+    description: "General inquiries, appointments, donations, getting involved — we look forward to your message.",
+    emailTitle: "E-mail",
+    workshopTitle: "Absteige (workshop 1020)",
+    workshopAddr: "Basement, Ybbsstraße 26, 1020 Vienna, Austria",
+    workshopHours: "Open every Wednesday from 5 – 9 pm.",
+    imprintTitle: "Imprint",
+    imprintOrg: "Lenkerbande",
+    imprintOrgSuffix: " — Association for the promotion of low-barrier mobility",
+    imprintAddr: "Ybbsstraße 26, 1020 Vienna, Austria",
+    imprintEmailLabel: "E-mail:",
+  },
+};
+
+export default en;
