@@ -22,7 +22,7 @@ const de = {
       "Räder für alle. Wir betreiben Selbsthilfewerkstätten in Wien und ermöglichen niederschwelligen Zugang zur schönsten Form der Mobilität.",
     navigation: "Navigation",
     contact: "Kontakt",
-    rights: "Verein zur Förderung niederschwelliger Mobilität.",
+    rights: "Verein und Sozialprojekt zur Förderung solidarischer Mobilität",
     imprint: "Impressum",
   },
   schedule: {
@@ -245,7 +245,8 @@ const de = {
     workshopHours: "Geöffnet jeden Mittwoch von 17 – 21 Uhr.",
     imprintTitle: "Impressum",
     imprintOrg: "Lenkerbande",
-    imprintOrgSuffix: " — Verein zur Förderung niederschwelliger Mobilität",
+    imprintOrgSuffix:
+      " — Verein und Sozialprojekt zur Förderung solidarischer Mobilität",
     imprintAddr: "Ybbsstraße 26, 1020 Wien, Österreich",
     imprintEmailLabel: "E-Mail:",
   },
