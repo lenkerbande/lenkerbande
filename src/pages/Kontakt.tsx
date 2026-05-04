@@ -22,7 +22,9 @@ const Kontakt = () => {
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-primary-foreground shadow-warm">
               <Mail className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-display text-xl font-semibold">{t("kontakt.emailTitle")}</h3>
+            <h3 className="mt-5 font-display text-xl font-semibold">
+              {t("kontakt.emailTitle")}
+            </h3>
             <p className="mt-2 text-base text-primary group-hover:text-primary-glow transition-base">
               hallo@lenkerbande.at
             </p>
@@ -33,17 +35,37 @@ const Kontakt = () => {
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary">
             <MapPin className="h-6 w-6" />
           </span>
-          <h3 className="mt-5 font-display text-xl font-semibold">{t("kontakt.workshopTitle")}</h3>
-          <p className="mt-2 text-base text-muted-foreground">{t("kontakt.workshopAddr")}</p>
-          <p className="mt-1 text-sm text-muted-foreground">{t("kontakt.workshopHours")}</p>
+          <h3 className="mt-5 font-display text-xl font-semibold">
+            {t("kontakt.workshopTitle")}
+          </h3>
+          <p className="mt-2 text-base text-muted-foreground">
+            {t("kontakt.workshopAddr")}
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            {t("kontakt.workshopHours")}
+          </p>
         </div>
 
         <div className="mt-16 rounded-2xl border border-dashed border-border bg-card/60 p-8">
-          <h2 className="font-display text-2xl font-semibold">{t("kontakt.imprintTitle")}</h2>
+          <h2 className="font-display text-2xl font-semibold">
+            {t("kontakt.imprintTitle")}
+          </h2>
           <div className="mt-4 space-y-2 text-sm text-muted-foreground">
-            <p><strong>{t("kontakt.imprintOrg")}</strong>{t("kontakt.imprintOrgSuffix")}</p>
+            <p>
+              <strong>{t("kontakt.imprintOrg")}</strong>
+              {t("kontakt.imprintOrgSuffix")}
+            </p>
+            <p>ZVR: 1366204585</p>
             <p>{t("kontakt.imprintAddr")}</p>
-            <p>{t("kontakt.imprintEmailLabel")} <a className="text-primary hover:text-primary-glow transition-base" href="mailto:hallo@lenkerbande.at">hallo@lenkerbande.at</a></p>
+            <p>
+              {t("kontakt.imprintEmailLabel")}{" "}
+              <a
+                className="text-primary hover:text-primary-glow transition-base"
+                href="mailto:hallo@lenkerbande.at"
+              >
+                hallo@lenkerbande.at
+              </a>
+            </p>
           </div>
         </div>
       </section>
