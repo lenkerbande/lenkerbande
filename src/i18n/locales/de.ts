@@ -26,8 +26,29 @@ const de = {
     imprint: "Impressum",
   },
   schedule: {
-    weekdays: ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"],
-    months: ["Jan", "Feb", "Mär", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+    weekdays: [
+      "Sonntag",
+      "Montag",
+      "Dienstag",
+      "Mittwoch",
+      "Donnerstag",
+      "Freitag",
+      "Samstag",
+    ],
+    months: [
+      "Jan",
+      "Feb",
+      "Mär",
+      "Apr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Okt",
+      "Nov",
+      "Dez",
+    ],
     timeRange: "{{start}} – {{end}} Uhr",
     radwgTitle: "RadWG 1060 — offene Radwerkstatt",
     absteigeTitle: "Absteige 1020 — offene Selbsthilfewerkstatt",
@@ -108,21 +129,32 @@ const de = {
       "Seit Anfang 2019 betreiben wir an zwei Standorten in Wien Selbsthilfewerkstätten, in denen Fahrräder mit liebevoller Kleinarbeit repariert und revitalisiert werden.",
     p1_pre: "Während einer unserer Standorte, die ",
     p1_a: "Absteige",
-    p1_mid: ", aus Platzgründen wirklich „nur\" eine Selbsthilfewerkstatt ist, ist unser zweiter Standort, die ",
+    p1_mid:
+      ', aus Platzgründen wirklich „nur" eine Selbsthilfewerkstatt ist, ist unser zweiter Standort, die ',
     p1_b: "RadWG",
     p1_post: ", in spannende Projekte eingebunden und bietet mehr Platz.",
     p2: "Daher können wir uns dort, zusätzlich zu einem offenen Werkstatttag pro Woche, außerdem um die Aufbereitung und Verteilung gespendeter Räder kümmern. Fahrräder, die sonst nur noch als Müll wahrgenommen werden, können so wieder fahrbereit gemacht und Personen zur Verfügung gestellt werden, die sich ein eigenes Fahrrad ansonsten nicht leisten könnten.",
     valuesTitle: "Unsere Werte",
     values: {
-      access: { t: "Niederschwellig", d: "Zugang zu Mobilität, Werkzeug und Wissen — ohne Hürden, gegen Spende." },
-      connect: { t: "Vernetzend", d: "Menschen aus dem Grätzl kommen zusammen, lernen voneinander und teilen Wissen — ohne finanzielle Hürden." },
-      sustain: { t: "Ressourcenschonend", d: "Räder reparieren statt wegwerfen. Jedes gerettete Rad ist ein Beitrag zur Stadt." },
+      access: {
+        t: "Niederschwellig",
+        d: "Zugang zu Mobilität, Werkzeug und Wissen — ohne Hürden, gegen Spende.",
+      },
+      connect: {
+        t: "Vernetzend",
+        d: "Menschen aus dem Grätzl kommen zusammen, lernen voneinander und teilen Wissen — ohne finanzielle Hürden.",
+      },
+      sustain: {
+        t: "Ressourcenschonend",
+        d: "Räder reparieren statt wegwerfen. Jedes gerettete Rad ist ein Beitrag zur Stadt.",
+      },
     },
   },
   absteige: {
     eyebrow: "Werkstatt · 1020 Wien",
     title: "Die Absteige",
-    description: "Eine gut ausgestattete Fahrrad- und Elektro-Selbsthilfewerkstatt mitten im 2. Bezirk.",
+    description:
+      "Eine gut ausgestattete Fahrrad- und Elektro-Selbsthilfewerkstatt mitten im 2. Bezirk.",
     where: "Wo?",
     whereV: "Souterrain, Ybbsstraße 26\n1020 Wien",
     when: "Wann?",
@@ -134,14 +166,16 @@ const de = {
       "Eine gut ausgestattete Fahrrad- und Elektro-Selbsthilfewerkstatt, viele Ersatzteile und motivierte HelferInnen, die dich bei Bedarf auch dabei unterstützen, dein Rad oder defektes Gerät wieder in Schwung zu bringen.",
     helpP2_pre: "Gebrauchte Ersatzteile, Werkzeug und Hilfestellung gibt es ",
     helpP2_strong: "gegen Spende",
-    helpP2_post: ". Neue Verschleißteile und mit Glück die richtigen Neuteile gibt es ebenso um einen guten Preis.",
+    helpP2_post:
+      ". Neue Verschleißteile und mit Glück die richtigen Neuteile gibt es ebenso um einen guten Preis.",
     helpP3:
       "Wenn du also ein kaputtes Rad hast, das du gerne selber in Ordnung bringen willst, aber nicht genau weißt wie, oder dir spezielles Werkzeug fehlt — dann komm gerne bei uns vorbei!",
     donationsTitle: "Fahrradspenden",
     donationsP1:
       "Gerne nehmen wir während der Öffnungszeiten eure defekten oder ungenutzten Fahrräder als Spenden entgegen und kümmern uns um eine sinnvolle Weiterverwendung.",
     donationsHint_strong: "Hinweis:",
-    donationsHint_post: " Aus Platzgründen findet an diesem Standort keine Ausgabe gespendeter Fahrräder statt.",
+    donationsHint_post:
+      " Aus Platzgründen findet an diesem Standort keine Ausgabe gespendeter Fahrräder statt.",
     gardenTitle: "Schraubgarten & Holzofen",
     gardenP:
       "Wenn's kalt ist, wärmt uns unser toller Holzofen. Und wenn's warm ist, verwandeln wir die Parkplätze vor der Werkstatt in die Grätzloase „Schraubgarten\".",
@@ -158,9 +192,11 @@ const de = {
     what: "Was?",
     whatV: "Selbsthilfewerkstatt &\nFahrrad-Abstellplätze",
     openTitle: "Offene Werkstatt",
-    openP: "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung — jeden Montag von 17 bis 21 Uhr.",
+    openP:
+      "Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung — jeden Montag von 17 bis 21 Uhr.",
     parkingTitle: "Fahrrad-Abstellplätze",
-    parkingP: "Neben der Werkstatt bieten wir vor Ort auch sichere Abstellplätze für Fahrräder an.",
+    parkingP:
+      "Neben der Werkstatt bieten wir vor Ort auch sichere Abstellplätze für Fahrräder an.",
     contactTitle: "Bei Fragen und Interesse",
     contactP: "Schreib uns einfach eine Nachricht — wir freuen uns!",
     upcoming: "Nächste Werkstatt-Termine",
@@ -168,16 +204,19 @@ const de = {
   termine: {
     eyebrow: "Kalender",
     title: "Anstehende Termine",
-    description: "Unsere offenen Werkstattzeiten — automatisch generiert aus dem Wochenplan. Vorbeikommen ist immer willkommen.",
+    description:
+      "Unsere offenen Werkstattzeiten — automatisch generiert aus dem Wochenplan. Vorbeikommen ist immer willkommen.",
     rhythmTitle: "Wöchentlicher Rhythmus",
-    rhythmNote: "Termine werden automatisch aus dem hinterlegten Wochenplan generiert. Pausen oder Sondertermine bitte per Mail anfragen.",
+    rhythmNote:
+      "Termine werden automatisch aus dem hinterlegten Wochenplan generiert. Pausen oder Sondertermine bitte per Mail anfragen.",
     mobileTitle: "Mobile Fahrradchecks?",
     mobileP: "Buche unser Team für deine Veranstaltung:",
   },
   support: {
     eyebrow: "Unterstützen",
     title: "So kannst du helfen.",
-    description: "Räder, Zeit, Räumlichkeiten — jede Form von Unterstützung bringt uns weiter.",
+    description:
+      "Räder, Zeit, Räumlichkeiten — jede Form von Unterstützung bringt uns weiter.",
     items: {
       donate: {
         title: "Fahrrad spenden",
@@ -198,7 +237,8 @@ const de = {
   kontakt: {
     eyebrow: "Kontakt",
     title: "Sag Hallo.",
-    description: "Allgemeine Anfragen, Terminvereinbarungen, Spenden, Mitmachen — wir freuen uns auf deine Nachricht.",
+    description:
+      "Allgemeine Anfragen, Terminvereinbarungen, Spenden, Mitmachen — wir freuen uns auf deine Nachricht.",
     emailTitle: "E-Mail",
     workshopTitle: "Absteige (Werkstatt 1020)",
     workshopAddr: "Souterrain, Ybbsstraße 26, 1020 Wien, Österreich",
