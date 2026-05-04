@@ -1,24 +1,29 @@
+import { useTranslation } from "react-i18next";
 import { MapPin, Clock, Wrench, Mail, ParkingSquare } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/SectionHeading";
 import { TermineList } from "@/components/TermineList";
 
 const RadWG = () => {
+  const { t } = useTranslation();
+
+  const cards = [
+    { icon: MapPin, label: t("radwg.where"), value: t("radwg.whereV") },
+    { icon: Clock, label: t("radwg.when"), value: t("radwg.whenV") },
+    { icon: Wrench, label: t("radwg.what"), value: t("radwg.whatV") },
+  ];
+
   return (
     <SiteLayout>
       <PageHeader
-        eyebrow="Werkstatt · 1060 Wien"
-        title="Die RadWG"
-        description="Selbsthilfewerkstatt und Fahrrad-Abstellplätze im 6. Bezirk."
+        eyebrow={t("radwg.eyebrow")}
+        title={t("radwg.title")}
+        description={t("radwg.description")}
       />
 
       <section className="container-wide py-12 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-3">
-          {[
-            { icon: MapPin, label: "Wo?", value: "Schmalzhofgasse 8\n1060 Wien" },
-            { icon: Clock, label: "Wann?", value: "Jeden Montag\n17 – 21 Uhr" },
-            { icon: Wrench, label: "Was?", value: "Selbsthilfewerkstatt &\nFahrrad-Abstellplätze" },
-          ].map((c) => (
+          {cards.map((c) => (
             <div key={c.label} className="rounded-2xl border border-border bg-card p-7">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-primary-foreground shadow-warm">
                 <c.icon className="h-6 w-6" />
@@ -36,20 +41,15 @@ const RadWG = () => {
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary">
               <Wrench className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-display text-2xl font-semibold">Offene Werkstatt</h3>
-            <p className="mt-3 text-base text-muted-foreground">
-              Komm vorbei und repariere dein Rad mit Werkzeug, Ersatzteilen und Hilfestellung —
-              jeden Montag von 17 bis 21 Uhr.
-            </p>
+            <h3 className="mt-5 font-display text-2xl font-semibold">{t("radwg.openTitle")}</h3>
+            <p className="mt-3 text-base text-muted-foreground">{t("radwg.openP")}</p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-7">
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary">
               <ParkingSquare className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-display text-2xl font-semibold">Fahrrad-Abstellplätze</h3>
-            <p className="mt-3 text-base text-muted-foreground">
-              Neben der Werkstatt bieten wir vor Ort auch sichere Abstellplätze für Fahrräder an.
-            </p>
+            <h3 className="mt-5 font-display text-2xl font-semibold">{t("radwg.parkingTitle")}</h3>
+            <p className="mt-3 text-base text-muted-foreground">{t("radwg.parkingP")}</p>
           </div>
         </div>
       </section>
@@ -59,12 +59,8 @@ const RadWG = () => {
           <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-primary-foreground shadow-warm">
             <Mail className="h-6 w-6" />
           </span>
-          <h2 className="mt-5 font-display text-2xl font-semibold sm:text-3xl">
-            Bei Fragen und Interesse
-          </h2>
-          <p className="mt-3 text-base text-muted-foreground">
-            Schreib uns einfach eine Nachricht — wir freuen uns!
-          </p>
+          <h2 className="mt-5 font-display text-2xl font-semibold sm:text-3xl">{t("radwg.contactTitle")}</h2>
+          <p className="mt-3 text-base text-muted-foreground">{t("radwg.contactP")}</p>
           <a
             href="mailto:radwg@lenkerbande.at"
             className="mt-4 inline-block text-lg font-semibold text-primary hover:text-primary-glow transition-base"
@@ -75,7 +71,7 @@ const RadWG = () => {
       </section>
 
       <section className="container-wide pb-16 sm:pb-20">
-        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Nächste Werkstatt-Termine</h2>
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("radwg.upcoming")}</h2>
         <div className="mt-8">
           <TermineList limit={4} showAllLink />
         </div>

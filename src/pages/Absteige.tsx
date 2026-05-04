@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { MapPin, Clock, Wrench, Bike, Heart } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/SectionHeading";
@@ -6,21 +7,25 @@ import heroImage from "@/assets/hero-workshop.jpg";
 import repairImage from "@/assets/repair.jpg";
 
 const Absteige = () => {
+  const { t } = useTranslation();
+
+  const cards = [
+    { icon: MapPin, label: t("absteige.where"), value: t("absteige.whereV") },
+    { icon: Clock, label: t("absteige.when"), value: t("absteige.whenV") },
+    { icon: Wrench, label: t("absteige.what"), value: t("absteige.whatV") },
+  ];
+
   return (
     <SiteLayout>
       <PageHeader
-        eyebrow="Werkstatt · 1020 Wien"
-        title="Die Absteige"
-        description="Eine gut ausgestattete Fahrrad- und Elektro-Selbsthilfewerkstatt mitten im 2. Bezirk."
+        eyebrow={t("absteige.eyebrow")}
+        title={t("absteige.title")}
+        description={t("absteige.description")}
       />
 
       <section className="container-wide py-12 sm:py-16">
         <div className="grid gap-8 lg:grid-cols-3">
-          {[
-            { icon: MapPin, label: "Wo?", value: "Souterrain, Ybbsstraße 26\n1020 Wien" },
-            { icon: Clock, label: "Wann?", value: "Jeden Mittwoch\n17 – 21 Uhr" },
-            { icon: Wrench, label: "Was?", value: "Selbsthilfewerkstatt mit\nWerkzeug & Ersatzteilen" },
-          ].map((c) => (
+          {cards.map((c) => (
             <div key={c.label} className="rounded-2xl border border-border bg-card p-7">
               <span className="grid h-12 w-12 place-items-center rounded-xl bg-gradient-warm text-primary-foreground shadow-warm">
                 <c.icon className="h-6 w-6" />
@@ -33,23 +38,14 @@ const Absteige = () => {
       </section>
 
       <section className="container-wide grid gap-10 pb-12 lg:grid-cols-2 lg:items-center">
-        <img src={heroImage} alt="Innenansicht der Absteige" loading="lazy" width={1920} height={1080} className="h-96 w-full rounded-2xl object-cover shadow-soft" />
+        <img src={heroImage} alt="" loading="lazy" width={1920} height={1080} className="h-96 w-full rounded-2xl object-cover shadow-soft" />
         <div>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">Hilfe zur Selbsthilfe</h2>
-          <p className="mt-4 text-base text-muted-foreground">
-            Eine gut ausgestattete Fahrrad- und Elektro-Selbsthilfewerkstatt, viele Ersatzteile
-            und motivierte HelferInnen, die dich bei Bedarf auch dabei unterstützen, dein Rad
-            oder defektes Gerät wieder in Schwung zu bringen.
-          </p>
+          <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("absteige.helpTitle")}</h2>
+          <p className="mt-4 text-base text-muted-foreground">{t("absteige.helpP1")}</p>
           <p className="mt-3 text-base text-muted-foreground">
-            Gebrauchte Ersatzteile, Werkzeug und Hilfestellung gibt es <strong>gegen Spende</strong>.
-            Neue Verschleißteile und mit Glück die richtigen Neuteile gibt es ebenso um einen guten Preis.
+            {t("absteige.helpP2_pre")}<strong>{t("absteige.helpP2_strong")}</strong>{t("absteige.helpP2_post")}
           </p>
-          <p className="mt-3 text-base text-muted-foreground">
-            Wenn du also ein kaputtes Rad hast, das du gerne selber in Ordnung bringen willst,
-            aber nicht genau weißt wie, oder dir spezielles Werkzeug fehlt — dann komm gerne
-            bei uns vorbei!
-          </p>
+          <p className="mt-3 text-base text-muted-foreground">{t("absteige.helpP3")}</p>
         </div>
       </section>
 
@@ -59,38 +55,31 @@ const Absteige = () => {
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary">
               <Bike className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-display text-2xl font-semibold">Fahrradspenden</h3>
-            <p className="mt-3 text-base text-muted-foreground">
-              Gerne nehmen wir während der Öffnungszeiten eure defekten oder ungenutzten
-              Fahrräder als Spenden entgegen und kümmern uns um eine sinnvolle Weiterverwendung.
-            </p>
+            <h3 className="mt-5 font-display text-2xl font-semibold">{t("absteige.donationsTitle")}</h3>
+            <p className="mt-3 text-base text-muted-foreground">{t("absteige.donationsP1")}</p>
             <p className="mt-3 text-sm text-muted-foreground">
-              <strong>Hinweis:</strong> Aus Platzgründen findet an diesem Standort keine Ausgabe
-              gespendeter Fahrräder statt.
+              <strong>{t("absteige.donationsHint_strong")}</strong>{t("absteige.donationsHint_post")}
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-7">
             <span className="grid h-12 w-12 place-items-center rounded-xl bg-secondary text-primary">
               <Heart className="h-6 w-6" />
             </span>
-            <h3 className="mt-5 font-display text-2xl font-semibold">Schraubgarten & Holzofen</h3>
-            <p className="mt-3 text-base text-muted-foreground">
-              Wenn's kalt ist, wärmt uns unser toller Holzofen. Und wenn's warm ist, verwandeln
-              wir die Parkplätze vor der Werkstatt in die Grätzloase „Schraubgarten".
-            </p>
+            <h3 className="mt-5 font-display text-2xl font-semibold">{t("absteige.gardenTitle")}</h3>
+            <p className="mt-3 text-base text-muted-foreground">{t("absteige.gardenP")}</p>
           </div>
         </div>
       </section>
 
       <section className="container-wide py-16 sm:py-20">
-        <h2 className="font-display text-3xl font-semibold sm:text-4xl">Nächste Werkstatt-Termine</h2>
+        <h2 className="font-display text-3xl font-semibold sm:text-4xl">{t("absteige.upcoming")}</h2>
         <div className="mt-8">
           <TermineList limit={4} showAllLink />
         </div>
       </section>
 
       <section className="container-wide pb-16">
-        <img src={repairImage} alt="Reparatur" loading="lazy" width={1280} height={960} className="h-80 w-full rounded-2xl object-cover shadow-soft" />
+        <img src={repairImage} alt="" loading="lazy" width={1280} height={960} className="h-80 w-full rounded-2xl object-cover shadow-soft" />
       </section>
     </SiteLayout>
   );

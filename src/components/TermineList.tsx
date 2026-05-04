@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Calendar, MapPin, Clock, ArrowRight } from "lucide-react";
 import { getUpcomingTermine, formatTerminDate, formatTimeRange, type TerminOccurrence } from "@/lib/schedule";
 import { cn } from "@/lib/utils";
@@ -10,25 +11,26 @@ interface Props {
 }
 
 export const TermineList = ({ limit = 6, className, showAllLink = false }: Props) => {
+  const { t, i18n } = useTranslation();
+  // i18n.language is referenced so list re-renders on language change
+  void i18n.language;
   const termine = getUpcomingTermine(limit);
 
   if (termine.length === 0) {
-    return (
-      <p className="text-muted-foreground">Aktuell sind keine Termine geplant. Schau bald wieder vorbei!</p>
-    );
+    return <p className="text-muted-foreground">{t("common.noDates")}</p>;
   }
 
   return (
     <div className={cn("space-y-4", className)}>
-      {termine.map((t, i) => (
-        <TerminCard key={`${t.title}-${t.date.toISOString()}`} t={t} index={i} />
+      {termine.map((occ, i) => (
+        <TerminCard key={`${occ.titleKey}-${occ.date.toISOString()}`} t={occ} index={i} />
       ))}
       {showAllLink && (
         <Link
           to="/termine"
           className="group inline-flex items-center gap-2 pt-2 text-sm font-semibold text-primary hover:text-primary-glow transition-base"
         >
-          Alle Termine ansehen
+          {t("common.allDates")}
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
         </Link>
       )}
@@ -36,8 +38,9 @@ export const TermineList = ({ limit = 6, className, showAllLink = false }: Props
   );
 };
 
-const TerminCard = ({ t, index }: { t: TerminOccurrence; index: number }) => {
-  const f = formatTerminDate(t.date);
+const TerminCard = ({ t: occ, index }: { t: TerminOccurrence; index: number }) => {
+  const { t } = useTranslation();
+  const f = formatTerminDate(occ.date);
   return (
     <article
       className="hover-lift group grid grid-cols-[auto_1fr] gap-5 rounded-2xl border border-border bg-card p-5 sm:p-6 animate-fade-up"
@@ -50,27 +53,27 @@ const TerminCard = ({ t, index }: { t: TerminOccurrence; index: number }) => {
       </div>
 
       <div className="min-w-0">
-        <h3 className="font-display text-lg font-semibold text-foreground sm:text-xl">{t.title}</h3>
+        <h3 className="font-display text-lg font-semibold text-foreground sm:text-xl">{t(occ.titleKey)}</h3>
         <div className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
           <span className="inline-flex items-center gap-1.5">
             <Clock className="h-4 w-4 text-primary" />
-            {formatTimeRange(t.startTime, t.endTime)}
+            {formatTimeRange(occ.startTime, occ.endTime)}
           </span>
           <span className="inline-flex items-center gap-1.5">
             <MapPin className="h-4 w-4 text-primary" />
-            {t.location}
+            {t(occ.locationKey)}
           </span>
         </div>
-        <p className="mt-2 text-sm text-muted-foreground">{t.address}</p>
-        {t.description && (
-          <p className="mt-3 text-sm text-foreground/80">{t.description}</p>
+        <p className="mt-2 text-sm text-muted-foreground">{occ.address}</p>
+        {occ.descriptionKey && (
+          <p className="mt-3 text-sm text-foreground/80">{t(occ.descriptionKey)}</p>
         )}
-        {t.url && (
+        {occ.url && (
           <Link
-            to={t.url}
+            to={occ.url}
             className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:text-primary-glow transition-base"
           >
-            Mehr Infos <ArrowRight className="h-3.5 w-3.5" />
+            {t("common.readMore")} <ArrowRight className="h-3.5 w-3.5" />
           </Link>
         )}
       </div>
@@ -78,9 +81,12 @@ const TerminCard = ({ t, index }: { t: TerminOccurrence; index: number }) => {
   );
 };
 
-export const TermineEmpty = () => (
-  <div className="rounded-2xl border border-dashed border-border bg-card/50 p-8 text-center">
-    <Calendar className="mx-auto h-8 w-8 text-muted-foreground" />
-    <p className="mt-3 text-sm text-muted-foreground">Aktuell sind keine Termine geplant.</p>
-  </div>
-);
+export const TermineEmpty = () => {
+  const { t } = useTranslation();
+  return (
+    <div className="rounded-2xl border border-dashed border-border bg-card/50 p-8 text-center">
+      <Calendar className="mx-auto h-8 w-8 text-muted-foreground" />
+      <p className="mt-3 text-sm text-muted-foreground">{t("common.noDates")}</p>
+    </div>
+  );
+};
